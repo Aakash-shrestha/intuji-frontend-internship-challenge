@@ -1,0 +1,15 @@
+@import "./header";
+@import "./section_one";
+@import "./section_two";
+@import "./section_three";
+@import "./section_four";
+@import "./section_five";
+@import "./section_six";
+@import "./footer";
+@import "./variable";
+@import "./mixin";
+
+body, html{
+    margin:0;
+    padding:0;
+}

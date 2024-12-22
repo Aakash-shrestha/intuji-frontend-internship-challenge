@@ -1,0 +1,120 @@
+@import "./variable";
+@import "./mixin";
+@import "./fontface";
+
+.about-page{
+    @include flex-center();
+    flex-direction: column;
+    font-family: "manrope medium", sans-serif;
+    background-color: #FAFBFF;
+    .about-companies{
+        @include flex-center();
+        flex-direction: column;
+        background-color: #F5F6F8;
+        padding: 40px; 
+        width: 94%;
+        .about-companies-text{ 
+            font-family: "goulong", sans-serif;
+            font-size: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-companies-logos{
+            @include flex-center();
+            justify-content: space-around;
+            gap: 40px;
+            flex-wrap: wrap;
+            width: 100%;
+        } 
+    }
+
+    .about-portfolio{
+        @include flex-center();
+        justify-content: space-between;
+        padding: 40px;
+        margin: 10px 60px 0 60px; 
+        .about-portfolio-text{
+            width: 40%;
+            h1{
+                @include flex-center();
+                justify-content: left;
+                font-family: "manrope extrabold", sans-serif;
+                font-size: 50px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-family: "manrope medium", sans-serif;
+                font-size: 0.9em;
+            }
+        }
+        .about-portfolio-review{
+            width: 30%;
+            position: relative;
+            .about-portfolio-review-symbol{
+                position: absolute;
+                top: -20px;
+                left: 25px;
+                z-index: 1;
+                img{
+                    width: 40px;
+                }
+            }
+            .about-portfolio-review-card{
+                background-color: #EAEAED;
+                padding: 30px;
+                border-radius: 20px;
+                position: relative;
+                p{
+                    font-size: 14px;
+                    font-family: "manrope medium", sans-serif;
+                }
+            }
+        }
+    }
+
+    .about-cards{
+        @include flex-center();
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly; 
+        font-family: "manrope extrabold", sans-serif;
+        margin: 40px;
+        .about-card{
+            position: relative;
+            padding: 20px; 
+            background-color: $about_card_color; 
+            border: solid #EDEEF2 1px;
+            border-radius: 10px;
+            height: 350px;
+            width: 320px;
+
+            .about-card-number{
+                position: relative;
+                top: 10px;
+                left: 10px;
+                font-size: 16px;
+            }
+            .about-card-content{
+                @include flex-center();
+                flex-direction: column;
+                text-align: center;
+                height: 100%; 
+                padding: 20px;
+                img{
+                    margin-bottom: 20px;
+                    width: 60px;
+                }
+                h1{
+                    margin-bottom: 10px;
+                    font-size: 28px; 
+                }
+                p{
+                    font-family: "manrope medium", sans-serif;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

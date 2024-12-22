@@ -1,0 +1,81 @@
+footer {
+  background-color: #f9f9ff; // Light background
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around; // Evenly space the sections
+  align-items: flex-start;
+  flex-wrap: wrap; // Ensure responsiveness for smaller screens
+
+  .footer-content {
+    flex: 1; // Equal width for all sections
+    max-width: 300px; // Limit width for content
+    margin: 10px 20px;
+
+    h1 {
+      font-family: "manrope bold", sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #2e2e48; // Dark heading color
+    }
+
+    p {
+      font-family: "manrope", sans-serif;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #6c6c80; // Subtle gray text
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+
+    h2 {
+      font-family: "manrope", sans-serif;
+      font-size: 16px;
+      margin: 8px 0;
+      color: #2e2e48;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #3b82f6; // Highlight color on hover
+      }
+    }
+  }
+
+  // Specific styling for the "Join Our Newsletter" section
+  .footer-content:nth-child(4) {
+    img {
+      width: 100%; // Full width for the subscribe bar
+      max-width: 280px;
+      margin-top: 15px;
+      border-radius: 8px; // Smooth edges
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack content vertically
+    align-items: center;
+
+    .footer-content {
+      max-width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 14px;
+      }
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}

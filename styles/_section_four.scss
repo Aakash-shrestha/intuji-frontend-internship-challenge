@@ -1,0 +1,99 @@
+@import "./variable";
+@import "./mixin";
+@import "./fontface";
+
+.section-four{
+    background-color: $main_bg_color;
+    .section-four-content{
+        margin: 20px 0px 20px 90px;
+        h1{
+            font-family: "manrope bold", sans-serif;
+            font-size: 56px;
+        }
+        p{
+            font-family: "manrope semibold", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            width: 40%;
+            font-size: 0.9em;
+        }
+    }
+
+    .section-four-cards{
+        // margin: 40px 40px 10px 40px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(8, 150px);
+        grid-template-rows: repeat(4, 100px);
+
+        .section-four-card-content{
+            @include flex-center();
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border: solid 1px #CFCFCF;
+            border-radius: 8px;
+            img{
+                width: 200px;
+            }
+            #review-symbol{
+                width: 48px;
+                position: absolute;
+                top: -20px;
+                right: 1100px;
+            }
+        }
+
+        #card-1{
+            grid-area: 1 / 1 / 5 / 5;
+
+        }
+        #card-2{
+            grid-area: 1 / 5 / 5 / 9;
+        }
+        p{
+            font-family: "manrope medium", sans-serif;
+            width: 230px;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+  
+    }
+    .section-four-banner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #3834A9;
+        padding: 20px;
+        width: 96vw;
+
+        .section-four-banner-one{
+            p{
+                font-family: "manrope medium", sans-serif;
+                font-size: 16px;
+                width: 100px;
+                color: white;
+            }
+        }
+        .section-four-banner-content{
+            text-align: center;
+            h1{
+                font-family: "manrope bold", sans-serif;
+                font-size: 40px;
+                color: white;
+            }
+            p{
+                font-family: "manrope medium", sans-serif;
+                font-size: 20px;
+                color: white;
+            }
+            img{
+                width: 15px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

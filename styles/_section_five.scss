@@ -1,0 +1,117 @@
+@import "./variable";
+@import "./mixin";
+@import "./fontface";
+
+.section-five {
+    padding: 20px;
+    background-color: $main_bg_color;
+
+    h1 {
+        font-family: "manrope bold", sans-serif;
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+
+    .section-five-grids {
+        display: grid;
+        margin: 0 auto; // Center the grid
+        grid-template-columns: repeat(12, 1fr); // Create 12 responsive columns
+        grid-gap: 20px; // Add space between grid items
+
+        .section-five-grids-content {
+            background-color: white;
+            padding: 20px;
+            margin: 0; // Remove extra margins to align with grid-gap
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            h1 {
+                font-family: "manrope bold", sans-serif;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                object-fit: cover; // Ensures the image scales properly without distortion
+                border-radius: 8px; // Consistent with the content box
+                margin-bottom: 10px;
+            }
+
+            // Content-specific styles
+            #section-five-grid-1-content {
+                max-width: 500px;
+            }
+        }
+
+        // First Box (Large Featured Item)
+        #section-five-grid-1 {
+            grid-column: span 12; // Full width for larger screens
+            grid-row: span 2;
+            img{
+                width: 400px;
+            }
+
+            // Fix for the image
+            img {
+                max-width: 100%;
+                max-height: 300px; // Adjust height for large images
+                object-fit: contain; // Preserve aspect ratio
+                border-radius: 12px; // Smooth edges
+            }
+        }
+
+        // Smaller Boxes
+        #section-five-grid-2 {
+            grid-column: span 4; // Use 4/12 columns
+            grid-row: span 2;
+        }
+
+        #section-five-grid-3 {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
+        #section-five-grid-4 {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        .section-five-grids {
+            grid-template-columns: repeat(6, 1fr); // Adjust to 6 columns for smaller screens
+        }
+
+        #section-five-grid-1 {
+            grid-column: span 6; // Full-width on smaller screens
+        }
+
+        #section-five-grid-2,
+        #section-five-grid-3,
+        #section-five-grid-4 {
+            grid-column: span 6; // Adjust to span full width
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-five-grids {
+            grid-template-columns: repeat(1, 1fr); // Single-column layout for very small screens
+        }
+
+        #section-five-grid-1,
+        #section-five-grid-2,
+        #section-five-grid-3,
+        #section-five-grid-4 {
+            grid-column: span 1;
+        }
+    }
+}

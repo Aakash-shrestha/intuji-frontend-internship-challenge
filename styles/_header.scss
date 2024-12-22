@@ -1,0 +1,119 @@
+@import "./variable";
+@import "./mixin";
+@import "./fontface";
+
+// Header Styling
+header {
+    background: linear-gradient(to bottom right, $header_color, $header_color_secondary);
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+        color: #000;
+        margin: 0 10px;
+    }
+
+    .header-content {
+        margin: 10px 60px;
+
+        // Navbar
+        .nav-bar {
+            @include flex-center();
+            justify-content: space-between;
+            font-family: 'manrop medium', sans-serif;
+
+            .nav-logo {
+                font-size: smaller;
+                font-family: sans-serif;
+            }
+
+            .nav-login {
+                @include flex-center();
+
+                .nav-login-button {
+                    background-color: $button_color;
+                    padding: 10px;
+                    margin-left: 20px;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        // Hero Section
+        .hero-section {
+            @include flex-center();
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .hero-content {
+                width: 50%;
+                font-family: 'manrope medium', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                margin-bottom: 100px;
+
+                .hero-text {
+                    h1 {
+                        font-family: "manrope extrabold", sans-serif;
+                        font-size: 3.5em;
+                    }
+
+                    p {
+                        width: 70%;
+                        color: $text_secondary_color; // Replace hardcoded color
+                        font-size: 1.15em;
+                        margin: 40px 0;
+                    }
+                }
+
+                .hero-button {
+                    @include flex-center();
+                    justify-content: flex-start;
+
+                    .hero-button-left {
+                        padding: 15px;
+                        background-color: $button_color;
+                        border-radius: 40px;
+                        color: white;
+                        margin: 20px 20px 20px 0;
+                        font-size: smaller;
+                    }
+
+                    .hero-button-right {
+                        @include flex-center();
+
+                        img {
+                            width: 50px;
+                        }
+
+                        a {
+                            color: $link_color;
+                        }
+                    }
+                }
+
+                .hero-additional {
+                    @include flex-center();
+                    justify-content: flex-start;
+                    margin-top: 50px;
+
+                    img {
+                        width: 15px;
+                        margin: 0 10px;
+                    }
+                }
+            }
+
+            .hero-image {
+                img {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+
